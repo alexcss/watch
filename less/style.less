@@ -70,6 +70,7 @@ textarea {
 	position: fixed;
 	left: 0;
 	right: 0;
+	z-index: 3;
 }
 .ba-header {
 	top: 0;
@@ -77,6 +78,19 @@ textarea {
 }
 .ba-logo {
 	float: left;
+	&__svg{
+		fill:red;
+		transition: fill .3s ease-in;
+		.ba-gold &{
+			fill: red;
+		}
+		.ba-sport &{
+			fill: #A0A9AF;
+		}
+		.ba-black &{
+			fill: #fff;
+		}
+	}
 }
 .ba-cart{
 	float: right;
@@ -99,9 +113,33 @@ textarea {
 }
 .ba-watch {
 	height: 100vh;
-	background: #fdefbe 50% no-repeat;
+	background: 50% no-repeat;
 	background-size: contain;
 	padding: 150px 0;
+	&--gold{
+		background-color: #FDEFBE;
+	}
+	&--black{
+		background-color: #111;
+		.ba-swatch {
+			background: #FFF;
+			box-shadow: 0 0 0 5px #FFF;
+		}
+		.ba-watch__title{
+			color: #FFF;
+		}
+		.ba-watch__add-to-cart{
+			&:hover{
+				color: #FFF;
+			}
+		}
+	}
+	&--sport{
+		background-color: #fff;
+		.ba-watch__add-to-cart{
+			color: #a0a9af;
+		}
+	}
 }
 @media (max-width:1024px){
 	.ba-watch{
@@ -114,6 +152,9 @@ textarea {
 }
 .ba-swatch{
 	margin-bottom: 160px;
+	@media (max-width:1400px){
+		margin-bottom: 50px;
+	}
 }
 .ba-watch__description{
 	margin: 0;
@@ -159,4 +200,72 @@ textarea {
 
 .ba-menu li a:hover{
 	color: #ff0000;
+}
+
+@import "slick.less";
+
+.ba-slider{
+	.ba-slide{
+		min-height: 100vh;
+		border: none;
+		outline:none;
+	}
+	.slick-arrow{
+		position: absolute;
+		left: 60px;
+		z-index: 2;
+		bottom: 100px;
+		width: 44px;
+		height: 44px;
+		border: none;
+		background: no-repeat 50%;
+		text-indent: -99999px;
+		border-radius: 50%;
+		outline:none;
+		&:focus{
+			background-color: #FFF;
+		}
+		&:active{
+			background-color: red;
+		}
+	}
+	.slick-prev{
+		background-image: url(../img/up.svg);
+	}
+	.slick-next{
+		background-image: url(../img/down.svg);
+		margin-left: 55px;
+	}
+	.slick-dots{
+		position: absolute;
+		margin: 0;
+		padding: 0;
+		z-index: 2;
+		list-style: none;
+		top: 50%;
+		right: 60px;
+		transform:translateY(-50%);
+		button{
+			width: 10px;
+			height: 10px;
+			text-indent: -9999px;
+			background: #A0A9AF;
+			margin: 4px 0;
+			padding: 0;
+			border-radius: 5px;
+			border: none;
+			display: block;
+			transition: height .3s ease-in;
+			&:focus,&:hover{
+				background: #FFF;
+				outline: none;
+			}
+		}
+		.slick-active{
+			button{
+				background: red;
+				height: 20px;
+			}
+		}
+	}
 }

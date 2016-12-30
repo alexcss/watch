@@ -749,6 +749,7 @@ select {
   position: fixed;
   left: 0;
   right: 0;
+  z-index: 3;
 }
 .ba-header {
   top: 0;
@@ -756,6 +757,20 @@ select {
 }
 .ba-logo {
   float: left;
+}
+.ba-logo__svg {
+  fill: red;
+  -webkit-transition: fill 0.3s ease-in;
+          transition: fill 0.3s ease-in;
+}
+.ba-gold .ba-logo__svg {
+  fill: red;
+}
+.ba-sport .ba-logo__svg {
+  fill: #A0A9AF;
+}
+.ba-black .ba-logo__svg {
+  fill: #fff;
 }
 .ba-cart {
   float: right;
@@ -778,9 +793,31 @@ select {
 }
 .ba-watch {
   height: 100vh;
-  background: #fdefbe 50% no-repeat;
+  background: 50% no-repeat;
   background-size: contain;
   padding: 150px 0;
+}
+.ba-watch--gold {
+  background-color: #FDEFBE;
+}
+.ba-watch--black {
+  background-color: #111;
+}
+.ba-watch--black .ba-swatch {
+  background: #FFF;
+  box-shadow: 0 0 0 5px #FFF;
+}
+.ba-watch--black .ba-watch__title {
+  color: #FFF;
+}
+.ba-watch--black .ba-watch__add-to-cart:hover {
+  color: #FFF;
+}
+.ba-watch--sport {
+  background-color: #fff;
+}
+.ba-watch--sport .ba-watch__add-to-cart {
+  color: #a0a9af;
 }
 @media (max-width: 1024px) {
   .ba-watch {
@@ -793,6 +830,11 @@ select {
 }
 .ba-swatch {
   margin-bottom: 160px;
+}
+@media (max-width: 1400px) {
+  .ba-swatch {
+    margin-bottom: 50px;
+  }
 }
 .ba-watch__description {
   margin: 0;
@@ -837,6 +879,155 @@ select {
 }
 .ba-menu li a:hover {
   color: #ff0000;
+}
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.slick-list:focus {
+  outline: none;
+}
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+}
+.slick-track:before,
+.slick-track:after {
+  content: "";
+  display: table;
+}
+.slick-track:after {
+  clear: both;
+}
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+[dir="rtl"] .slick-slide {
+  float: right;
+}
+.slick-slide img {
+  display: block;
+}
+.slick-slide.slick-loading img {
+  display: none;
+}
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+.slick-initialized .slick-slide {
+  display: block;
+}
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+  display: none;
+}
+.ba-slider .ba-slide {
+  min-height: 100vh;
+  border: none;
+  outline: none;
+}
+.ba-slider .slick-arrow {
+  position: absolute;
+  left: 60px;
+  z-index: 2;
+  bottom: 100px;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: no-repeat 50%;
+  text-indent: -99999px;
+  border-radius: 50%;
+  outline: none;
+}
+.ba-slider .slick-arrow:focus {
+  background-color: #FFF;
+}
+.ba-slider .slick-arrow:active {
+  background-color: red;
+}
+.ba-slider .slick-prev {
+  background-image: url(../img/up.svg);
+}
+.ba-slider .slick-next {
+  background-image: url(../img/down.svg);
+  margin-left: 55px;
+}
+.ba-slider .slick-dots {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+  list-style: none;
+  top: 50%;
+  right: 60px;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.ba-slider .slick-dots button {
+  width: 10px;
+  height: 10px;
+  text-indent: -9999px;
+  background: #A0A9AF;
+  margin: 4px 0;
+  padding: 0;
+  border-radius: 5px;
+  border: none;
+  display: block;
+  -webkit-transition: height 0.3s ease-in;
+          transition: height 0.3s ease-in;
+}
+.ba-slider .slick-dots button:focus,
+.ba-slider .slick-dots button:hover {
+  background: #FFF;
+  outline: none;
+}
+.ba-slider .slick-dots .slick-active button {
+  background: red;
+  height: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
