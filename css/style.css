@@ -720,7 +720,6 @@ a,
 input[type="submit"],
 input[type="button"],
 button {
-  -webkit-transition: color 0.3s ease-in, border-color 0.3s ease-in, background-color 0.3s ease-in, opacity 0.3s ease-in;
   transition: color 0.3s ease-in, border-color 0.3s ease-in, background-color 0.3s ease-in, opacity 0.3s ease-in;
 }
 input[type="submit"],
@@ -736,7 +735,6 @@ input[type="number"],
 input[type="tel"],
 textarea,
 select {
-  -webkit-transition: color 0.3s ease-in, border-color 0.3s ease-in, background-color 0.3s ease-in, opacity 0.3s ease-in;
   transition: color 0.3s ease-in, border-color 0.3s ease-in, background-color 0.3s ease-in, opacity 0.3s ease-in;
 }
 /* Layout */
@@ -760,8 +758,7 @@ select {
 }
 .ba-logo__svg {
   fill: red;
-  -webkit-transition: fill 0.3s ease-in;
-          transition: fill 0.3s ease-in;
+  transition: fill 0.3s ease-in;
 }
 .ba-gold .ba-logo__svg {
   fill: red;
@@ -887,7 +884,6 @@ select {
   box-sizing: border-box;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -988,6 +984,10 @@ select {
 .ba-slider .slick-arrow:active {
   background-color: red;
 }
+.ba-slider .slick-arrow.slick-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
 .ba-slider .slick-prev {
   background-image: url(../img/up.svg);
 }
@@ -1017,8 +1017,7 @@ select {
   border-radius: 5px;
   border: none;
   display: block;
-  -webkit-transition: height 0.3s ease-in;
-          transition: height 0.3s ease-in;
+  transition: height 0.3s ease-in;
 }
 .ba-slider .slick-dots button:focus,
 .ba-slider .slick-dots button:hover {
